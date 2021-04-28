@@ -1,0 +1,106 @@
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">新增一間新餐廳 <i class="fas fa-utensils"></i></h5>
+          <hr>
+          <form method="POST" action="/restaurants">
+            <div class="form-group form-row">
+              <label for="name" class="col-md-4 col-form-label">
+                餐廳名稱
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="name" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="name_en" class="col-md-4 col-form-label">
+                English Name
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="name_en" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="category" class="col-md-4 col-form-label">
+                餐廳類別
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="category" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="image" class="col-md-4 col-form-label">
+                餐廳圖片網址
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="image" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="location" class="col-md-4 col-form-label">
+                餐廳地址
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="location" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="phone" class="col-md-4 col-form-label">
+                餐廳電話
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="phone" class="form-control">
+              </div>
+            </div>
+
+            {{!-- <div class="form-group form-row mb-2 align-items-center">
+              <label for="lowercase" class="col-md-4 col-form-label">Include Lowercase Characters</label>
+              <div class="col-md-8">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="lowercase" name="lowercase">
+                  <label class="custom-control-label" for="lowercase">(e.g. abcdefg)</label>
+                </div>
+              </div>
+            </div> --}}
+
+            <div class="form-group form-row">
+              <label for="google_map" class="col-md-4 col-form-label">
+                Google Map
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="google_map" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="rating" class="col-md-4 col-form-label">
+                餐廳評價
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="rating" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group form-row">
+              <label for="description" class="col-md-4 col-form-label">
+                餐廳描述
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="description" class="form-control">
+              </div>
+            </div>
+            <button class="btn btn-success" type="submit">新增</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
