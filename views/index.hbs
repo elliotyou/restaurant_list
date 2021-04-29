@@ -25,9 +25,12 @@
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
+          <a href="/restaurant/new">
+            <button class="btn btn-outline-danger" type="button"><i class="fas fa-plus"></i></button>
+          </a>
         </div>
       </form>
-      <a href="/restaurant/new">Create</a>
+
     </div>
   </div>
 </div>
@@ -55,10 +58,14 @@
 
             </div>
             <div class="card-footer text-muted">
-              <a href="/restaurants/{{this._id}}/edit">edit</a>
-              <form action="/restaurants/{{this._id}}/delete" method="POST" style="display: inline;">
-                <button type="submit">delete</button>
-              </form>
+              <div class="d-flex justify-content-end">
+                <a class="mr-2" href="/restaurants/{{this._id}}/edit"><i class="far fa-edit fa-lg"></i></a>
+                <form id="formForDelete" action="/restaurants/{{this._id}}/delete" method="POST"
+                  style="display: inline;">
+                  <a onclick="document.getElementById('formForDelete').submit();"><i
+                      class="far fa-trash-alt fa-lg"></i></a>
+                </form>
+              </div>
             </div>
           </div>
         </a>

@@ -49,10 +49,14 @@
         {{restaurant.description}}
       </p>
 
-      <a href="/restaurants/{{restaurant._id}}/edit">edit</a>
-      <a href="/restaurants/{{restaurant._id}}/delete">delete</a>
       <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
         style="max-width: 600px;">
+      <div class="d-flex justify-content-end">
+        <a class="mr-2" href="/restaurants/{{restaurant._id}}/edit"><i class="far fa-edit fa-lg"></i></a>
+        <form id="formForDelete" action="/restaurants/{{restaurant._id}}/delete" method="POST" style="display: inline;">
+          <a onclick="document.getElementById('formForDelete').submit();"><i class="far fa-trash-alt fa-lg"></i></a>
+        </form>
+      </div>
     </div>
   </div>
 </div>
