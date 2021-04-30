@@ -108,3 +108,7 @@ header {
 .btn-outline-danger {
   margin-left: 10px;
 }
+
+.btn-of-index {
+  padding: 0;
+}

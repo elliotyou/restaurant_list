@@ -59,10 +59,11 @@
             </div>
             <div class="card-footer text-muted">
               <div class="d-flex justify-content-end">
-                <a class="mr-2" href="/restaurants/{{this._id}}/edit"><i class="far fa-edit fa-lg"></i></a>
+                <a href="/restaurants/{{this._id}}/edit">
+                  <button class="btn btn-of-index mr-2"><i class="far fa-edit fa-lg"></i></button>
+                </a>
                 <form id="formForDelete" action="/restaurants/{{this._id}}/delete" method="POST">
-                  <a onclick="document.getElementById('formForDelete').submit();"><i
-                      class="far fa-trash-alt fa-lg"></i></a>
+                  <button type="submit" class="btn btn-of-index"><i class="far fa-trash-alt fa-lg"></i></button>
                 </form>
               </div>
             </div>

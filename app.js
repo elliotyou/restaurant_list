@@ -30,9 +30,6 @@ app.get('/', (req, res) => {
     .then(restaurants => res.render('index', { restaurants }))
 })
 
-app.get('/', function () {
-})
-
 app.get('/restaurants/:restaurant_id', (req, res) => {
   const id = req.params.restaurant_id
   return Restaurant.findById(id)
