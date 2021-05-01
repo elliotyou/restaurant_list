@@ -38,6 +38,7 @@
 <!-- restaurant list -->
 <div class="container d-flex flex-wrap justify-content-center mt-5">
   {{!-- ===== --}}
+  {{#if restaurants}}
   {{#each restaurants}}
   <a href="/restaurants/{{this._id}}" class="text-secondary">
     <div class="card mb-3" id="card-of-index">
@@ -68,6 +69,8 @@
     </div>
   </a>
   {{/each}}
-
+  {{else}}
+  <p>抱歉，沒有 "{{keyword}}" 的相關結果</p>
+  {{/if}}
   {{!-- ===== --}}
 </div>

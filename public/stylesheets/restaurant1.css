@@ -117,3 +117,7 @@ header {
   width: 230px;
   margin: 10px;
 }
+
+#no-result {
+  font-size: 2rem;
+}
