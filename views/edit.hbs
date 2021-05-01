@@ -12,7 +12,7 @@
                 餐廳名稱
               </label>
               <div class="col-md-8">
-                <input type="text" name="name" class="form-control" value={{restaurant.name}}>
+                <input type="text" name="name" class="form-control" value={{restaurant.name}} required>
               </div>
             </div>
 
@@ -60,16 +60,6 @@
                 <input type="text" name="phone" class="form-control" value="{{restaurant.phone}}">
               </div>
             </div>
-
-            {{!-- <div class="form-group form-row mb-2 align-items-center">
-              <label for="lowercase" class="col-md-4 col-form-label">Include Lowercase Characters</label>
-              <div class="col-md-8">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="lowercase" name="lowercase">
-                  <label class="custom-control-label" for="lowercase">(e.g. abcdefg)</label>
-                </div>
-              </div>
-            </div> --}}
 
             <div class="form-group form-row">
               <label for="google_map" class="col-md-4 col-form-label">

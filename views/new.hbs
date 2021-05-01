@@ -12,7 +12,7 @@
                 餐廳名稱
               </label>
               <div class="col-md-8">
-                <input type="text" name="name" class="form-control" placeholder="eg. 圓山大飯店">
+                <input type="text" name="name" class="form-control" placeholder="eg. 圓山大飯店" required>
               </div>
             </div>
 
@@ -30,11 +30,10 @@
                 餐廳類別
               </label>
               <div class="col-md-8">
-                <select class="form-control" aria-label="Default select example" name="category">
-                  <option selected>選擇分類</option>
+                <select class="form-control" name="category">
                   <option value="咖啡">咖啡</option>
                   <option value="酒吧">酒吧</option>
-                  <option value="台式">台式</option>
+                  <option value="台式" selected disabled>台式</option>
                   <option value="義式">義式</option>
                   <option value="美式">美式</option>
                   <option value="中東">中東</option>
