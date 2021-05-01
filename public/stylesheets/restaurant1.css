@@ -112,3 +112,8 @@ header {
 .btn-of-index {
   padding: 0;
 }
+
+#card-of-index {
+  width: 230px;
+  margin: 10px;
+}
