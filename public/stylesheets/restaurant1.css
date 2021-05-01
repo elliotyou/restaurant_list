@@ -100,7 +100,7 @@ header {
   
 }
 
-.fa-edit, .fa-trash-alt {
+.fa-edit, .fa-trash-alt, .fa-backspace {
   color: #333333;
   cursor: pointer;
 }
