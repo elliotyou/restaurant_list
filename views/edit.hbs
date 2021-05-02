@@ -25,6 +25,15 @@
               </div>
             </div>
 
+            {{!-- <div class="form-group form-row">
+              <label for="category" class="col-md-4 col-form-label">
+                餐廳類別
+              </label>
+              <div class="col-md-8">
+                <input type="text" name="category" class="form-control" value="restaurant.category">
+              </div>
+            </div> --}}
+
             <div class="form-group form-row">
               <label for="category" class="col-md-4 col-form-label">
                 餐廳類別
@@ -75,7 +84,8 @@
                 餐廳評價
               </label>
               <div class="col-md-8">
-                <input type="text" name="rating" class="form-control" value="{{restaurant.rating}}">
+                <input type="number" step="0.1" max="5" min="1" name="rating" class="form-control"
+                  value="{{restaurant.rating}}">
               </div>
             </div>
 
