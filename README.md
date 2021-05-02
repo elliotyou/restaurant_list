@@ -1,6 +1,7 @@
 # Restaurant List
 
-![main_page_2](main_page_1.jpg)
+
+![main_page_2](main_page_2.jpg)
 
 ![new_page](./screenshots/new_page.jpg)
 
