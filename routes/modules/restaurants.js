@@ -5,22 +5,27 @@ const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
   const sort = req.query.sort
-  const restaurants = Restaurant.find().lean()
+  let sortMapping
+
   switch (sort) {
     case 'nameAsc':
-      restaurants.sort({ name: 'asc' })
+      sortMapping = { name: 'asc' }
       break
     case 'nameDesc':
-      restaurants.sort({ name: 'desc' })
+      sortMapping = { name: 'desc' }
       break
     case 'categoryAsc':
-      restaurants.sort({ category: 'asc' })
+      sortMapping = { category: 'asc' }
       break
     case 'ratingDesc':
-      restaurants.sort({ rating: 'desc' })
+      sortMapping = { rating: 'desc' }
       break
   }
-  restaurants
+
+  return Restaurant
+    .find()
+    .lean()
+    .sort(sortMapping)
     .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
 

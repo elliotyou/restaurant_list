@@ -30,7 +30,7 @@
         </div>
       </form>
       <form action="/restaurants" method="GET">
-        <select name="sort" class="form-control btn-outline-secondary" onchange="this.form.submit()">
+        <select id="sort" name="sort" class="form-control" onchange="this.form.submit()">
           <option value="nameAsc" disabled selected>排序</option>
           <option value="nameAsc">A -> Z</option>
           <option value="nameDesc">Z -> A</option>
