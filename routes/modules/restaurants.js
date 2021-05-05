@@ -4,31 +4,44 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
-  const sort = req.query.sort
+  const { keyword, sort } = req.query
   let sortMapping
+  let sortForReturn = {
+    nameAsc: false,
+    nameDesc: false,
+    category: false,
+    rating: false
+  }
 
   switch (sort) {
     case 'nameAsc':
       sortMapping = { name: 'asc' }
+      sortForReturn.nameAsc = true
       break
     case 'nameDesc':
       sortMapping = { name: 'desc' }
+      sortForReturn.nameDesc = true
       break
     case 'categoryAsc':
       sortMapping = { category: 'asc' }
+      sortForReturn.categoryAsc = true
       break
     case 'ratingDesc':
       sortMapping = { rating: 'desc' }
+      sortForReturn.ratingDesc = true
       break
   }
 
-  return Restaurant
-    .find()
+  return Restaurant.find({
+    "$or": [
+      { "name": { $regex: `${keyword}`, $options: '$i' } },
+      { "category": { $regex: `${keyword}`, $options: '$i' } }
+    ]
+  })
     .lean()
     .sort(sortMapping)
-    .then(restaurants => res.render('index', { restaurants }))
+    .then(restaurants => res.render('index', { restaurants, keyword, sortForReturn }))
     .catch(error => console.log(error))
-
 })
 
 

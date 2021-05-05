@@ -17,27 +17,25 @@
 <div class="container-sm search-bar">
   <div class="search-bar-outer">
     <div class="search-bar-inner d-flex justify-content-between">
-      <form action="/search">
+      <form action="/restaurants/">
         <div class="input-group">
           <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
             aria-label="Restaurant Name..." value="" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
-          <a href="/newone">
-            <button class="btn btn-major ml-2" type="button"><i class="fas fa-plus"></i></button>
-          </a>
+          <select id="sort" name="sort" class="form-control" onchange="this.form.submit()">
+            <option value="nameAsc" disabled>排序</option>
+            <option value="nameAsc" {{#if sortForReturn.nameAsc}}selected{{/if}}>A -> Z</option>
+            <option value="nameDesc" {{#if sortForReturn.nameDesc}}selected{{/if}}>Z -> A</option>
+            <option value="categoryAsc" {{#if sortForReturn.categoryAsc}}selected{{/if}}>類別</option>
+            <option value="ratingDesc" {{#if sortForReturn.ratingDesc}}selected{{/if}}>評比</option>
+          </select>
         </div>
       </form>
-      <form action="/restaurants" method="GET">
-        <select id="sort" name="sort" class="form-control" onchange="this.form.submit()">
-          <option value="nameAsc" disabled selected>排序</option>
-          <option value="nameAsc">A -> Z</option>
-          <option value="nameDesc">Z -> A</option>
-          <option value="categoryAsc">類別</option>
-          <option value="ratingDesc">評比</option>
-        </select>
-      </form>
+      <a href="/newone">
+        <button class="btn btn-major ml-2" type="button"><i class="fas fa-plus"></i></button>
+      </a>
     </div>
   </div>
 </div>
