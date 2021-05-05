@@ -11,7 +11,6 @@ router.get('/:restaurant_id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log('req.body', req.body)
   return Restaurant.create(req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
