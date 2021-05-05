@@ -6,7 +6,7 @@ const restaurants = require('./modules/restaurants')
 const newone = require('./modules/newone')
 const search = require('./modules/search')
 
-router.use('/', home)
+router.use(home)
 router.use('/restaurants', restaurants)
 router.use('/newone', newone)
 router.use('/search', search)
