@@ -21,11 +21,11 @@
         <div class="input-group">
           <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
             aria-label="Restaurant Name..." value="" aria-describedby="search-button">
-          <div class="input-group-append">
+          <div class="input-group-append mr-3">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
           <select id="sort" name="sort" class="form-control" onchange="this.form.submit()">
-            <option value="nameAsc" disabled>排序</option>
+            <option value="nameAsc" disabled selected>排序</option>
             <option value="nameAsc" {{#if sortForReturn.nameAsc}}selected{{/if}}>A -> Z</option>
             <option value="nameDesc" {{#if sortForReturn.nameDesc}}selected{{/if}}>Z -> A</option>
             <option value="categoryAsc" {{#if sortForReturn.categoryAsc}}selected{{/if}}>類別</option>
