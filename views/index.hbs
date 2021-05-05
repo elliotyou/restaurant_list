@@ -16,7 +16,7 @@
 <!-- search bar -->
 <div class="container search-bar">
   <div class="search-bar-outer">
-    <div class="search-bar-inner">
+    <div class="search-bar-inner d-flex justify-content-between">
       <form action="/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
@@ -30,7 +30,16 @@
           </a>
         </div>
       </form>
-
+      <form action="/restaurants" method="GET">
+        <h4 class="mb-2">排序：</h4>
+        <select name="sort" class="form-control btn-outline-secondary" onchange="this.form.submit()">
+          <option value="nameAsc" disabled selected>Sort</option>
+          <option value="nameAsc">A -> Z</option>
+          <option value="nameDesc">Z -> A</option>
+          <option value="categoryAsc">類別</option>
+          <option value="ratingDesc">評比</option>
+        </select>
+      </form>
     </div>
   </div>
 </div>
