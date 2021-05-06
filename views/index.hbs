@@ -17,7 +17,7 @@
 <div class="container-sm search-bar">
   <div class="search-bar-outer">
     <div class="search-bar-inner d-flex justify-content-between">
-      <form action="/restaurants/">
+      <form action="/searchsort">
         <div class="input-group d-flex align-items-center">
           <h5 class="mr-2">搜尋</h5>
           <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
@@ -34,9 +34,7 @@
           </select>
         </div>
       </form>
-      <a href="/newone">
-        <button class="btn btn-major ml-2" type="button"><i class="fas fa-plus"></i></button>
-      </a>
+      <a href="/new" class="btn btn-major ml-2" type="button"><i class="fas fa-plus"></i></a>
     </div>
   </div>
 </div>
