@@ -15,28 +15,28 @@ router.get('/', (req, res) => {
 
   let sortMapping
   let sortForReturn = {
-    nameAsc: false,
-    nameDesc: false,
-    category: false,
-    rating: false
+    isNameAsc: false,
+    isNameDesc: false,
+    isCategoryAsc: false,
+    isRatingDesc: false
   }
 
   switch (sort) {
-    case 'nameAsc':
+    case 'isNameAsc':
       sortMapping = { name: 'asc' }
-      sortForReturn.nameAsc = true
+      sortForReturn.isNameAsc = true
       break
-    case 'nameDesc':
+    case 'isNameDesc':
       sortMapping = { name: 'desc' }
-      sortForReturn.nameDesc = true
+      sortForReturn.isNameDesc = true
       break
-    case 'categoryAsc':
+    case 'isCategoryAsc':
       sortMapping = { category: 'asc' }
-      sortForReturn.categoryAsc = true
+      sortForReturn.isCategoryAsc = true
       break
-    case 'ratingDesc':
+    case 'isRatingDesc':
       sortMapping = { rating: 'desc' }
-      sortForReturn.ratingDesc = true
+      sortForReturn.isRatingDesc = true
       break
   }
 
