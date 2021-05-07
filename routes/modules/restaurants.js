@@ -11,12 +11,6 @@ router.get('/:restaurant_id', (req, res) => {
     .then(restaurant => res.render('show', { restaurant }))
 })
 
-router.post('/', (req, res) => {
-  return Restaurant.create(req.body)
-    .then(() => res.redirect('/'))
-    .catch(error => console.log(error))
-})
-
 router.get('/:restaurant_id/edit', (req, res) => {
   const id = req.params.restaurant_id
   return Restaurant.findById(id)

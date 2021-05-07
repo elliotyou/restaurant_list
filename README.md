@@ -1,7 +1,7 @@
 # Restaurant List
 
 
-![main_page_2](./screenshots/main_page_2.jpg)
+![main_page_3](./screenshots/main_page_3.jpg)
 
 ![new_page](./screenshots/new_page.jpg)
 
@@ -11,7 +11,8 @@
 
 ## Features
 * Give you a list of good restaurants
-* Search restaurant by name or category
+* Search restaurants by name or category
+* Sort retaurants result by name(ascend), name(descend), category(ascend), or rating(descend)
 * Check each restaurant's details by clicking into it, including: category, address, phone number, description...
 * User can Creat a new restaurant
 * User can Delete a restaurant
