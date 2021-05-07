@@ -27,10 +27,10 @@
           </div>
           <select id="sort" name="sort" class="form-control" onchange="this.form.submit()">
             <option value="isNameAsc" disabled selected>排序</option>
-            <option value="isNameAsc" {{#if sortForReturn.isNameAsc}}selected{{/if}}>A -> Z</option>
-            <option value="isNameDesc" {{#if sortForReturn.isNameDesc}}selected{{/if}}>Z -> A</option>
-            <option value="isCategoryAsc" {{#if sortForReturn.isCategoryAsc}}selected{{/if}}>類別</option>
-            <option value="isRatingDesc" {{#if sortForReturn.isRatingDesc}}selected{{/if}}>評比</option>
+            <option value="isNameAsc" {{#if sortForHandlebars.isNameAsc}}selected{{/if}}>A -> Z</option>
+            <option value="isNameDesc" {{#if sortForHandlebars.isNameDesc}}selected{{/if}}>Z -> A</option>
+            <option value="isCategoryAsc" {{#if sortForHandlebars.isCategoryAsc}}selected{{/if}}>類別</option>
+            <option value="isRatingDesc" {{#if sortForHandlebars.isRatingDesc}}selected{{/if}}>評比</option>
           </select>
         </div>
       </form>
