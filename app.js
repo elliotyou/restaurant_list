@@ -1,6 +1,6 @@
 // 2-3-A3
-
 const express = require('express')
+const session = require('express-session')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
@@ -13,6 +13,12 @@ const port = 3000
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
+
+app.use(session({
+  secret: 'Secret1999',
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
