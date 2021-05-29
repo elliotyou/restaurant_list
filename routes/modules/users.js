@@ -23,11 +23,11 @@ router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
   const errors = []
 
-  if (!name || !email || !password || !confirmPassword) {
-    errors.push({ message: 'All fields are required' })
+  if (!email || !password || !confirmPassword) {
+    errors.push({ message: 'Email、密碼、確認密碼 為必填欄位' })
   }
   if (password !== confirmPassword) {
-    errors.push({ message: 'password and confirm password are different' })
+    errors.push({ message: '"密碼"與"確認密碼"不同' })
   }
   if (errors.length) {
     return res.render('register', {
@@ -41,7 +41,7 @@ router.post('/register', (req, res) => {
 
   User.findOne({ email }).then(user => {
     if (user) {
-      errors.push({ message: 'the email has been registered before' })
+      errors.push({ message: '此email帳號已被註冊過' })
       return res.render('register', {
         errors,
         name,
@@ -67,7 +67,7 @@ router.post('/register', (req, res) => {
 
 router.get('/logout', (req, res) => {
   req.logout()
-  req.flash('success_msg', 'you have been logged out successfully')
+  req.flash('success_msg', '您已成功登出')
   res.redirect('/users/login')
 })
 
