@@ -3,16 +3,17 @@ const router = express.Router()
 
 const Restaurant = require('../../models/restaurant')
 
-function generateSearchCondition(keyword) {
+const generateSearchCondition = (keyword, userId) => {
   return {
-    "$or": [
-      { "name": { $regex: `${keyword}`, $options: '$i' } },
-      { "category": { $regex: `${keyword}`, $options: '$i' } }
-    ]
+    '$or': [
+      { 'name': { $regex: `${keyword}`, $options: '$i' } },
+      { 'category': { $regex: `${keyword}`, $options: '$i' } }
+    ],
+    userId: userId
   }
 }
 
-function generateObjectForSort(sortString) {
+const generateObjectForSort = (sortString) => {
   let outputObject = {
     sortForExpress: {},
     sortForHandlebars: {
@@ -37,7 +38,7 @@ function generateObjectForSort(sortString) {
       outputObject.sortForHandlebars.isCategoryAsc = true
       break
     case 'isRatingDesc':
-      outputObject.sortForExpress = { isRatingDesc: 'desc' }
+      outputObject.sortForExpress = { rating: 'desc' }
       outputObject.sortForHandlebars.isRatingDesc = true
       break
   }
@@ -48,16 +49,15 @@ function generateObjectForSort(sortString) {
 router.get('/', (req, res) => {
   const sort = req.query.sort
   const keyword = req.query.keyword.trim()
-  const searchCondition = generateSearchCondition(keyword)
-  const objectForSort = generateObjectForSort(sort)
-  const sortForExpress = objectForSort.sortForExpress
-  const sortForHandlebars = objectForSort.sortForHandlebars
+  const userId = req.user._id
+  const searchCondition = generateSearchCondition(keyword, userId)
+  const { sortForExpress, sortForHandlebars } = generateObjectForSort(sort)
 
   return Restaurant.find(searchCondition)
     .lean()
     .sort(sortForExpress)
     .then(restaurants => res.render('index', { restaurants, keyword, sortForHandlebars }))
-    .catch(error => console.log(error))
+    .catch(err => console.log(err))
 })
 
 
