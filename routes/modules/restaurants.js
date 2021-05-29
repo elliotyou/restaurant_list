@@ -21,11 +21,10 @@ router.post('/', (req, res) => {
 router.get('/:restaurant_id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.restaurant_id
-  console.log('into routes/modules/restaurants.js/READ/get...', _id, userId)
   return Restaurant.findOne({ _id, userId })
     .lean()
     .then(restaurant => {
-      res.render('show', { restaurant })
+      res.render('detail', { restaurant })
     })
     .catch(err => console.log(err))
 })
