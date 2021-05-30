@@ -6,8 +6,8 @@ const Restaurant = require('../../models/restaurant')
 const generateSearchCondition = (keyword, userId) => {
   return {
     '$or': [
-      { 'name': { $regex: `${keyword}`, $options: '$i' } },
-      { 'category': { $regex: `${keyword}`, $options: '$i' } }
+      { 'name': { $regex: keyword, $options: '$i' } },
+      { 'category': { $regex: keyword, $options: '$i' } }
     ],
     userId: userId
   }
@@ -59,6 +59,5 @@ router.get('/', (req, res) => {
     .then(restaurants => res.render('index', { restaurants, keyword, sortForHandlebars }))
     .catch(err => console.log(err))
 })
-
 
 module.exports = router
