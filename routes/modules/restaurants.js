@@ -61,7 +61,7 @@ router.get('/:restaurant_id/edit', (req, res) => {
     .lean()
     .then(restaurant => {
       const categoryObject = generateCategoryObject(restaurant.category)
-      const restaurantObject = {}
+      const restaurantObject = { _id }
       Object.assign(restaurantObject, restaurant)
       res.render('edit', { restaurantObject, categoryObject })
     })
@@ -71,12 +71,15 @@ router.get('/:restaurant_id/edit', (req, res) => {
 //UPDATE
 router.put('/:restaurant_id', validator, (req, res) => {
   const { errors, restaurantObject } = res.locals
+  const _id = req.params.restaurant_id
   if (errors.length) {
+    console.log('into routes/modules/restaurants.js/put', restaurantObject)
+
     return res.render('edit', { errors, restaurantObject })
   }
 
   const userId = req.user._id
-  const _id = req.params.restaurant_id
+  console.log('into routes/modules/restaurants.js/put', _id)
 
   return Restaurant.findOne({ _id, userId })
     .then(restaurant => {

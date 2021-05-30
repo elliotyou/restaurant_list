@@ -8,7 +8,8 @@ const isRatingType = (input) => {
 module.exports = {
   validator: (req, res, next) => {
     const restaurantObject = req.body
-    restaurantObject._id = req.params.restaurant_id || ''
+    restaurantObject._id = req.params.restaurant_id
+    console.log('into middleware/validator/', restaurantObject._id)
     const categories = ['咖啡', '酒吧', '義式餐廳', '美式', '日本料理', '中東料理', '台式', '韓式', '中式', '港式', '泰式']
     const errors = []
 
