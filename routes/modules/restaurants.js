@@ -73,8 +73,6 @@ router.put('/:restaurant_id', validator, (req, res) => {
   const { errors, restaurantObject } = res.locals
   const _id = req.params.restaurant_id
   if (errors.length) {
-    console.log('into routes/modules/restaurants.js/put', restaurantObject)
-
     return res.render('edit', { errors, restaurantObject })
   }
 

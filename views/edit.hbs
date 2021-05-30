@@ -1,5 +1,3 @@
-{{> message}}
-
 <div class="container py-5">
 
   <div class="row">
@@ -8,6 +6,7 @@
         <div class="card-body">
           <h5 class="card-title">修改餐廳 <i class="fas fa-utensils"></i></h5>
           <hr>
+          {{> message}}
           <form method="POST" action="/restaurants/{{restaurantObject._id}}?_method=PUT">
 
             <div class="form-group form-row">
